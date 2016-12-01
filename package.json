@@ -1,6 +1,6 @@
 {
   "name": "oauth2orize-password-realm",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Password exchange with realm support for OAuth2orize.",
   "keywords": [
     "oauth",
