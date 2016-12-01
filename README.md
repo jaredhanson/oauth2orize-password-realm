@@ -50,6 +50,40 @@ Content-Type: application/x-www-form-urlencoded
 grant_type=http%3A%2F%2Fauth0.com%2Foauth%2Fgrant-type%2Fpassword-realm&username=johndoe&password=A3ddj3w&realm=users
 ```
 
+## Considerations
+
+#### Realms
+
+Realms are used to allow a server to be partitioned into a set of protection
+spaces, each with its own authentication scheme and/or authorization database.
+
+One use case for this is when a company maintains separate user directories, for
+example one directory for employees and another for customers.  An application
+that allows both empolyees and customers to log in can present a user interface
+with a dropdown containing "Employees" or "Customers" as realms.  The realm
+value, along with the username and password credentials, is then submitted to
+the token endpoint.  The authorization server would use the realm value to
+determine which directory to use when verifying the password.
+
+#### Relation to Resource Owner and Client Credentials
+
+The functionality of this exchange overlaps to some degree with both the [Resource Owner Password Credentials Grant](https://tools.ietf.org/html/rfc6749#section-4.3)
+and the [Client Credentials Grant](https://tools.ietf.org/html/rfc6749#section-4.4)
+defined by OAuth 2.0, in that both allow a password credential to be exchanged
+for an access token.  The former allows a resource owner (typically a user) to
+obtain an access token, while the latter allows a client to exchange its client
+secret for an access token.
+
+This exchange offers a more general form of password exchange, and could be used
+as an alternative, unified implementation where the two types of entities are divided
+into unique realms (for example, `users` and `clients`).
+
+For compatibility, it is recommended to continue to support both `password` and
+`client_credentials` exchanges.  If additional entities, such as resource
+servers, need to be able to obtain access tokens, implementing this exchange
+offers more flexibility.
+
+
 ## Contributing
 
 #### Tests
@@ -76,4 +110,4 @@ $ make view-cov
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2011-2016 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
+Copyright (c) 2016 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
