@@ -1,0 +1,41 @@
+{
+  "name": "oauth2orize-password-realm",
+  "version": "0.0.0",
+  "description": "Password exchange for OAuth2orize, that includes realm support.",
+  "keywords": [
+    "oauth",
+    "oauth2",
+    "password"
+  ],
+  "author": {
+    "name": "Jared Hanson",
+    "email": "jaredhanson@gmail.com",
+    "url": "http://jaredhanson.net/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaredhanson/oauth2orize-password-realm.git"
+  },
+  "bugs": {
+    "url": "http://github.com/jaredhanson/oauth2orize-password-realm/issues"
+  },
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "./lib",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "make-node": "^0.3.0",
+    "mocha": "^2.0.0",
+    "chai": "^3.0.0",
+    "chai-connect-middleware": "^0.3.1"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha test/*.test.js"
+  }
+}
