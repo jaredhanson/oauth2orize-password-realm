@@ -106,6 +106,12 @@ $ make test-cov
 $ make view-cov
 ```
 
+
+## Sponsors
+
+This project is sponsored by [Auth0](https://auth0.com/).
+
+
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
